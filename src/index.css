@@ -1,8 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
   --font-mono: "JetBrains Mono", monospace;
+
+  --color-brand-aqua: #00b2dc;
+  --color-brand-navy: #024696;
+  --color-brand-gold: #c79e2d;
+  --color-brand-navy: #002b5e; /* Deep navy from the flyer */
+  --color-brand-gold: #f5a623; /* Warm gold from the flyer */
+  
+  --color-surface-base: #f8fafc; /* Premium light gray/white */
+  --color-surface-elevated: #ffffff; /* Pure white */
+}
+
+@layer base {
+  :root {
+    --font-size-h1: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+    --font-size-h2: clamp(2rem, 4vw + 1rem, 3.5rem);
+    --font-size-h3: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
+  }
+
+  body {
+    @apply bg-[var(--color-surface-base)] text-brand-navy font-sans antialiased selection:bg-brand-gold selection:text-white;
+  }
+
+  h1 { font-size: var(--font-size-h1); line-height: 1.1; }
+  h2 { font-size: var(--font-size-h2); line-height: 1.2; }
+  h3 { font-size: var(--font-size-h3); line-height: 1.3; }
+}
+
+@layer utilities {
+  /* Fluid Typography using clamp() */
+  .text-fluid-hero { font-size: clamp(2.5rem, 5vw + 1rem, 5rem); line-height: 1.1; letter-spacing: -0.02em; }
+  .text-fluid-h1 { font-size: clamp(2rem, 4vw + 1rem, 4rem); line-height: 1.1; letter-spacing: -0.02em; }
+  .text-fluid-h2 { font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; }
+  .text-fluid-h3 { font-size: clamp(1.25rem, 2vw + 0.5rem, 1.75rem); line-height: 1.3; }
+  .text-fluid-body { font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); line-height: 1.6; }
+  .text-fluid-small { font-size: clamp(0.75rem, 0.8vw + 0.4rem, 0.875rem); line-height: 1.5; }
+
+  .glass-panel {
+    @apply bg-white/90 backdrop-blur-2xl border border-white shadow-[0_8px_30px_rgb(0,43,94,0.08)] rounded-3xl overflow-hidden;
+  }
+  .glass-panel-heavy {
+    @apply bg-slate-900/40 backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-3xl overflow-hidden;
+  }
+  .glass-card {
+    @apply bg-white border border-slate-100 shadow-[0_4px_20px_rgb(0,43,94,0.04)] hover:shadow-[0_8px_30px_rgb(0,43,94,0.12)] transition-all duration-300 rounded-2xl;
+  }
+  .glass-input {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-brand-navy focus:bg-white focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 font-sans text-sm outline-none transition-all duration-200 placeholder-slate-400;
+  }
+  .glass-button-primary {
+    @apply bg-brand-gold text-brand-navy font-bold hover:bg-brand-gold/90 hover:shadow-[0_0_20px_rgba(245,166,35,0.4)] transition-all duration-300 border border-brand-gold/50 rounded-xl px-6 py-3;
+  }
+  .glass-nav {
+    @apply bg-surface-base/70 backdrop-blur-2xl border-b border-white/5;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.08) translate(-1%, -1%); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+@keyframes bubble-rise {
+  0% { transform: translateY(100%) scale(0); opacity: 0; }
+  20% { opacity: 0.15; }
+  80% { opacity: 0.15; }
+  100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-kenburns {
+  animation: kenburns 20s ease-in-out infinite;
 }

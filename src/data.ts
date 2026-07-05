@@ -6,7 +6,9 @@ export const FARM_METADATA = {
   motto: 'We Hatch to Feed',
   dailyProduction: '30,000 fry (GIFT strain)',
   buyBackRate: '$35 USD per 1,000 fingerlings',
-  phone: '+263 773 561 176', // Real WhatsApp contact from flyer
+  buyBackMature: '$2.00 USD per kg',
+  phone1: '+263 773 561 176',
+  phone2: '+263 773 561 175',
 };
 
 export const PRODUCT_CATALOG: ServicePriceItem[] = [

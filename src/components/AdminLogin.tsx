@@ -48,13 +48,13 @@ export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
         className="bg-white border border-slate-150 rounded-3xl overflow-hidden shadow-xl"
       >
         {/* Header decoration */}
-        <div className="bg-slate-900 text-white p-8 text-center relative overflow-hidden">
+        <div className="bg-brand-navy text-white p-8 text-center relative overflow-hidden">
           <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-4 translate-y-4 select-none pointer-events-none">
             <Fish size={140} className="text-white" />
           </div>
           
           <div className="relative z-10 flex flex-col items-center">
-            <div className="p-3 bg-emerald-500 text-slate-950 rounded-2xl mb-4 shadow-md shadow-emerald-500/20">
+            <div className="p-3 bg-brand-aqua text-white rounded-2xl mb-4 shadow-md shadow-brand-aqua/20">
               <Fish size={28} />
             </div>
             <h2 className="text-xl font-display font-bold">
@@ -90,7 +90,7 @@ export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
                   id="login-email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm outline-none focus:border-emerald-500 font-sans"
+                  className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm outline-none focus:border-brand-aqua font-sans"
                   placeholder="admin@aquaculture.co.zw"
                   disabled={isLoading}
                 />
@@ -110,7 +110,7 @@ export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
                   id="login-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm outline-none focus:border-emerald-500 font-sans"
+                  className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm outline-none focus:border-brand-aqua font-sans"
                   placeholder="••••••••"
                   disabled={isLoading}
                 />
@@ -120,7 +120,7 @@ export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl cursor-pointer transition-all shadow-md active:translate-y-0.5 flex items-center justify-center gap-2"
+              className="w-full py-2.5 bg-brand-navy hover:bg-brand-navy/90 text-white text-sm font-semibold rounded-xl cursor-pointer transition-all shadow-md active:translate-y-0.5 flex items-center justify-center gap-2"
             >
               {isLoading ? 'Verifying Access...' : 'Login to Admin Dashboard'}
             </button>
@@ -138,7 +138,7 @@ export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
               onClick={handleDemoLogin}
               className="w-full py-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-slate-300 text-slate-700 text-xs font-semibold rounded-xl cursor-pointer transition-all flex items-center justify-center gap-2"
             >
-              <Sparkles size={14} className="text-amber-500 animate-pulse" />
+              <Sparkles size={14} className="text-brand-gold animate-pulse" />
               Quick Demo Access (One-click)
             </button>
 
