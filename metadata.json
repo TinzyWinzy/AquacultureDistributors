@@ -1,0 +1,6 @@
+{
+  "name": "Aquaculture Distributors",
+  "description": "Complete Partnership & Sales Management PWA for Aquaculture Distributors. Capture, organize, and convert leads for fingerlings, pond construction, breeding contracts, and training registrations with real-time analytics and direct WhatsApp integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
